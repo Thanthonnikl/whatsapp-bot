@@ -1,37 +1,98 @@
 {
-    "name": "Phoenix-MD",
-    "version":"0.0.1",
-    "description": "A Simple WhatsApp Bot",
-    "logo": "https://i.imgur.com/T78fhJk.jpeg'",
-    "keywords": ["whatsapp,bot,md,multi-device,Phoenix,Phoenix-MD"],
-    "repository": "https://github.com/AbhishekSuresh2/Phoenix-MD",
-    "stack": "container",
-    "env": {
-        "SESSION_ID": {
-            "description": "Enter Your Session ID",
-            "required": true
-        },
-        "HANDLERS": {
-            "description": "Enter Prefix For Commands Enter False To Make No Prefix",
-            "required": true,
-            "value": "."
-        },
-        "SUDO": {
-            "description": "Enter Numbers WIth Country Code Without + Seperate With , To Add More Numbers",
-            "required": false
-            "value": "919074692450"
-        }, 
-        "STICKER_DATA": {
-            "description": "Enter Your Sticker Packname And Author Name",
-            "required": false
-            "value": "🎯𝙿𝚑𝚘𝚎𝚗𝚒𝚡-𝙼𝙳;𝙰𝚋𝚑𝚒𝚜𝚑𝚎𝚔 𝚂𝚞𝚛𝚎𝚜𝚑☘️"
-        },
-        
-        "HEROKU_APP_NAME": {
-            "description": "Enter Your Heroku App Name Same As Above You Entered",
-            "required": true
-        },
-        "HEROKU_API_KEY": {
-            "description": "Enter Your Heroku Account Api Key Get It From https://dashboard.heroku.com/account",
-            "required": true
-        }
+  "name": "inrl@4.1.3",
+  "description": "simple multi divece whatsapp bot",
+  "keywords": ["whatsapp"],
+  "success_url": "/",
+  "stack": "container",
+  "env": {
+    "SESSION_ID": {
+      "description": "to run the bot",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "For updating bot and setting vars remotely",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Exact name which you gave at the top",
+      "required": true,
+      "value": ""
+    },
+    "WORKTYPE": {
+      "description": "enter bot mode must be public/private",
+      "required": true,
+      "value": "private"
+    },
+    "BOT_INFO": {
+      "description": "baasic bot configration",
+      "required": true,
+      "value": "INRL-BOT-MD;INRL;https://i.imgur.com/DyLAuEh.jpg"
+    },
+    "PREFIX": {
+      "description": "bot preifx  ., [.,!], false",
+      "required": true,
+      "value": "."
+    },
+    "AUDIO_DATA": {
+      "description": "audio metadata",
+      "required": true,
+      "value": "ᴍᴜꜱɪᴄ;ᴋɪᴅ;https://i.imgur.com/DyLAuEh.jpg"
+    },
+    "STICKER_DATA": {
+      "description": "sticker data",
+      "required": true,
+      "value": "inrl;inrl"
+    },
+    "PERSONAL_MESSAGE": {
+      "description": "personal greetings for first message ",
+      "required": true,
+      "value": "this is a bot, owner is bussy with something"
+    },
+    "REJECT_CALL": {
+      "description": "automatic reject call",
+      "required": true,
+      "value": "false"
+    },
+    "WARN": {
+      "description": "warn count",
+      "required": true,
+      "value": "4"
+    },
+    "SUDO": {
+      "description": "secounds owners of bot",
+      "required": true,
+      "value": "null"
+    },
+    "AJOIN": {
+      "description": "automatically join to all groups",
+      "required": true,
+      "value": "false"
+    },
+    "SAVE_STATUS": {
+      "description": "save all status message",
+      "required": true,
+      "value": "null"
+    },
+    "STATUS_VIEW": {
+      "description": "status views, values= true,only-view=jid, not-view=jid",
+      "required": true,
+      "value": "false"
+    },
+    "ERROR_MSG": {
+      "description": "send error messages to bot number",
+      "required": true,
+      "value": "true"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:basic"
+    } 
+  ],
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" },
+    { "url": "https://github.com/carlosdommor/heroku-buildpack-ffmpeg-latest" }
+  ]
+}
